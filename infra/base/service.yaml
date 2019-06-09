@@ -5,9 +5,9 @@ metadata:
   namespace: "default"
 spec:
   ports:
-  - protocol: "TCP"
-    port: 8080
-    targetPort: 3001
+    - protocol: "TCP"
+      port: 8080
+      targetPort: 3001
   selector:
     app: "hosted-danger"
     tier: "api"
