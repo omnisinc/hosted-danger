@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hosted-danger
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hosted-danger
+      tier: api
+  template:
+    metadata:
+      labels:
+        app: hosted-danger
+        tier: api
+    spec:
+      containers:
+        - name: api
+          image: asia.gcr.io/hosted-danger/hosted-danger:latest
+          ports:
+            - containerPort: 3001
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hosted-danger
+      tier: api
+  template:
+    metadata:
+      labels:
+        app: hosted-danger
+        tier: api
+    spec:
+      containers:
+        - name: api
+          image: asia.gcr.io/hosted-danger/hosted-danger:latest
+          ports:
+            - containerPort: 3001
